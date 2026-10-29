@@ -150,6 +150,123 @@ Every rule, with the bugs the legacy mode keeps on purpose, is in [spec/ALGORITH
   `x [local] [local]` collapses to `x [local]`, but a pattern made only of the entity stays (`[local] [local]` was
   the second most common Barbosa pattern in the published data).
 
+## Each algorithm, step by step
+
+All seven start from the same tokenizer, then each one generates its patterns and drops what the ones before it
+already produced for the same search (the exclusion chain). The examples are real outputs of the library with the
+example gazetteer.
+
+**Tokenizer** (shared)
+
+```mermaid
+flowchart LR
+  A["Como fazer bolo de cenoura"] --> B["lower case,<br/>accents folded,<br/>edge punctuation removed"]
+  B --> C{"stopword?<br/>(NLTK minus para, mais,<br/>quando, como, muito,<br/>qual, pelo, pelos)"}
+  C -- "yes: de" --> X["dropped"]
+  C -- no --> E{"3 or more<br/>characters?"}
+  E -- no --> X
+  E -- yes --> D["Lucene Brazilian stemmer<br/>como → com · fazer → faz<br/>bolo → bol · cenoura → cenour"]
+  D --> F["tokens<br/>com faz bol cenour"]
+```
+
+**Viana · `prefix`**: what a search *starts with*. Good for intents (`com faz …`, `previsa temp …`).
+
+```mermaid
+flowchart LR
+  T["tokens<br/>com faz bol cenour"] --> K["for k = 2 … min(n, 5)<br/>take the first k tokens"]
+  K --> P["com faz<br/>com faz bol<br/>com faz bol cenour"]
+```
+
+**Vilela · `contiguous`**: every run of words, wherever it is in the search. Finds the core of searches with
+different openings.
+
+```mermaid
+flowchart LR
+  T["tokens<br/>com faz bol cenour"] --> W["windows of 2 … n-1 tokens<br/>(by size, then position)<br/>+ the whole search"]
+  W --> E{"already a<br/>Viana pattern?"}
+  E -- "yes: com faz,<br/>com faz bol cenour" --> X["dropped"]
+  E -- no --> P["faz bol<br/>bol cenour<br/>faz bol cenour"]
+```
+
+**Oliveira · `skipgram`**: 2 to 4 words in their order, with gaps. Joins searches that have extra words in the
+middle (*como fazer **um** bolo de cenoura*).
+
+```mermaid
+flowchart LR
+  T["tokens<br/>com faz bol cenour"] --> C["every combination of 2, 3, 4<br/>positions, order kept"]
+  C --> E{"already Viana<br/>or Vilela?"}
+  E -- yes --> X["dropped"]
+  E -- no --> P["com bol · com cenour<br/>faz cenour · com faz cenour<br/>com bol cenour"]
+```
+
+**Dourado · `bag`**: the same combinations with the order thrown away. Joins *bolo de cenoura como fazer* with
+*como fazer bolo de cenoura*.
+
+```mermaid
+flowchart LR
+  T["tokens<br/>com faz bol cenour"] --> C["combinations of 2, 3, 4"]
+  C --> D{"all words<br/>different?"}
+  D -- no --> X["dropped"]
+  D -- yes --> S["sort the words<br/>alphabetically"]
+  S --> E{"already Viana, Vilela<br/>or Oliveira?"}
+  E -- yes --> X
+  E -- no --> P["bol com · cenour faz<br/>bol cenour com faz …"]
+```
+
+**Entity replacement** (shared by the next three)
+
+```mermaid
+flowchart LR
+  A["hotéis baratos em salvador"] --> L["at each word, try the<br/>longest gazetteer key first<br/>(accents and case folded;<br/>keys of ≤ 3 letters exact)"]
+  L --> H{"match?"}
+  H -- "hotéis → Turismo" --> P1["[turismo]"]
+  H -- "salvador → Local > Cidade" --> P2["[local>cidade]"]
+  H -- no --> W["word goes to<br/>the tokenizer"]
+  P1 & P2 & W --> R["[turismo] barat [local>cidade]<br/>(placeholders are one token)"]
+```
+
+**Barbosa · `entity_prefix`**: Viana on the replaced search.
+
+```mermaid
+flowchart LR
+  R["[turismo] barat [local>cidade]"] --> K["prefixes of 2 … 5 tokens"]
+  K --> B{"has an entity?"}
+  B -- no --> X["dropped"]
+  B -- yes --> E["expand: one pattern per type<br/>[local>cidade] → [local] and [cidade]"]
+  E --> C["collapse repeats:<br/>x [local] [local] → x [local]"]
+  C --> P["[turismo] barat<br/>[turismo] barat [local]<br/>[turismo] barat [cidade]"]
+```
+
+**Figueredo · `entity_contiguous`**: Vilela on the replaced search, without what Barbosa found.
+
+```mermaid
+flowchart LR
+  R["[turismo] barat [local>cidade]"] --> W["runs of 2 … n-1 tokens<br/>+ the whole search"]
+  W --> B{"has an entity?"}
+  B -- no --> X["dropped"]
+  B -- yes --> E["expand per type,<br/>collapse repeats"]
+  E --> D{"already<br/>Barbosa?"}
+  D -- yes --> X
+  D -- no --> P["barat [local]<br/>barat [cidade]"]
+```
+
+**Rosa · `entity_skipgram`**: Oliveira on the replaced search, without what Barbosa and Figueredo found. Written in
+February 2019 for exactly this search: *hotéis baratos em salvador* → `[turismo] [local]`.
+
+```mermaid
+flowchart LR
+  R["[turismo] barat [local>cidade]"] --> C["combinations of 2, 3, 4<br/>positions, order kept"]
+  C --> B{"has an entity?"}
+  B -- no --> X["dropped"]
+  B -- yes --> E["expand per type,<br/>collapse repeats"]
+  E --> D{"already Barbosa<br/>or Figueredo?"}
+  D -- yes --> X
+  D -- no --> P["[turismo] [local]<br/>[turismo] [cidade]"]
+```
+
+Then [`aggregate`](spec/ALGORITHMS.md#6-aggregation-aggregate) groups the patterns of every search: number of
+searches, total volume, average competition and CPC, the leading search, and the 1–20 bands.
+
 ## The story
 
 In 2018 the author had millions of Google searches with volume, CPC and competition, and needed to know which

@@ -153,6 +153,123 @@ Todas as regras, inclusive os bugs que o modo legado mantém de propósito, est�
   vira `x [local]`, mas um padrão feito só da entidade fica (`[local] [local]` era o segundo padrão Barbosa mais
   comum nos dados publicados).
 
+## Cada algoritmo, passo a passo
+
+Os sete começam pelo mesmo tokenizador; depois cada um gera seus padrões e descarta o que os anteriores já
+produziram para a mesma busca (a cadeia de exclusão). Os exemplos são saídas reais da biblioteca com o gazetteer de
+exemplo.
+
+**Tokenizador** (comum a todos)
+
+```mermaid
+flowchart LR
+  A["Como fazer bolo de cenoura"] --> B["minúsculas,<br/>sem acentos,<br/>sem pontuação nas pontas"]
+  B --> C{"stopword?<br/>(NLTK menos para, mais,<br/>quando, como, muito,<br/>qual, pelo, pelos)"}
+  C -- "sim: de" --> X["descartada"]
+  C -- não --> E{"3 caracteres<br/>ou mais?"}
+  E -- não --> X
+  E -- sim --> D["stemmer brasileiro do Lucene<br/>como → com · fazer → faz<br/>bolo → bol · cenoura → cenour"]
+  D --> F["tokens<br/>com faz bol cenour"]
+```
+
+**Viana · `prefix`**: como a busca *começa*. Bom para intenções (`com faz …`, `previsa temp …`).
+
+```mermaid
+flowchart LR
+  T["tokens<br/>com faz bol cenour"] --> K["para k = 2 … mín(n, 5)<br/>pega os k primeiros tokens"]
+  K --> P["com faz<br/>com faz bol<br/>com faz bol cenour"]
+```
+
+**Vilela · `contiguous`**: toda sequência de palavras, em qualquer lugar da busca. Acha o miolo de buscas que
+começam diferente.
+
+```mermaid
+flowchart LR
+  T["tokens<br/>com faz bol cenour"] --> W["janelas de 2 … n-1 tokens<br/>(por tamanho, depois posição)<br/>+ a busca inteira"]
+  W --> E{"já é padrão<br/>do Viana?"}
+  E -- "sim: com faz,<br/>com faz bol cenour" --> X["descartado"]
+  E -- não --> P["faz bol<br/>bol cenour<br/>faz bol cenour"]
+```
+
+**Oliveira · `skipgram`**: de 2 a 4 palavras na ordem, com saltos. Junta buscas que têm palavras a mais no meio
+(*como fazer **um** bolo de cenoura*).
+
+```mermaid
+flowchart LR
+  T["tokens<br/>com faz bol cenour"] --> C["toda combinação de 2, 3, 4<br/>posições, mantendo a ordem"]
+  C --> E{"já é Viana<br/>ou Vilela?"}
+  E -- sim --> X["descartado"]
+  E -- não --> P["com bol · com cenour<br/>faz cenour · com faz cenour<br/>com bol cenour"]
+```
+
+**Dourado · `bag`**: as mesmas combinações, sem a ordem. Junta *bolo de cenoura como fazer* com *como fazer bolo
+de cenoura*.
+
+```mermaid
+flowchart LR
+  T["tokens<br/>com faz bol cenour"] --> C["combinações de 2, 3, 4"]
+  C --> D{"palavras todas<br/>diferentes?"}
+  D -- não --> X["descartado"]
+  D -- sim --> S["ordena as palavras<br/>alfabeticamente"]
+  S --> E{"já é Viana, Vilela<br/>ou Oliveira?"}
+  E -- sim --> X
+  E -- não --> P["bol com · cenour faz<br/>bol cenour com faz …"]
+```
+
+**Troca de entidades** (comum aos três seguintes)
+
+```mermaid
+flowchart LR
+  A["hotéis baratos em salvador"] --> L["em cada palavra, tenta primeiro<br/>a chave mais longa do gazetteer<br/>(sem acento e sem caixa;<br/>chaves de até 3 letras exatas)"]
+  L --> H{"casou?"}
+  H -- "hotéis → Turismo" --> P1["[turismo]"]
+  H -- "salvador → Local > Cidade" --> P2["[local>cidade]"]
+  H -- não --> W["a palavra vai<br/>para o tokenizador"]
+  P1 & P2 & W --> R["[turismo] barat [local>cidade]<br/>(cada marcador é um token)"]
+```
+
+**Barbosa · `entity_prefix`**: o Viana sobre a busca com entidades trocadas.
+
+```mermaid
+flowchart LR
+  R["[turismo] barat [local>cidade]"] --> K["prefixos de 2 … 5 tokens"]
+  K --> B{"tem entidade?"}
+  B -- não --> X["descartado"]
+  B -- sim --> E["expande: um padrão por tipo<br/>[local>cidade] → [local] e [cidade]"]
+  E --> C["junta repetições:<br/>x [local] [local] → x [local]"]
+  C --> P["[turismo] barat<br/>[turismo] barat [local]<br/>[turismo] barat [cidade]"]
+```
+
+**Figueredo · `entity_contiguous`**: o Vilela sobre a busca trocada, sem o que o Barbosa achou.
+
+```mermaid
+flowchart LR
+  R["[turismo] barat [local>cidade]"] --> W["sequências de 2 … n-1 tokens<br/>+ a busca inteira"]
+  W --> B{"tem entidade?"}
+  B -- não --> X["descartado"]
+  B -- sim --> E["expande por tipo,<br/>junta repetições"]
+  E --> D{"já é<br/>Barbosa?"}
+  D -- sim --> X
+  D -- não --> P["barat [local]<br/>barat [cidade]"]
+```
+
+**Rosa · `entity_skipgram`**: o Oliveira sobre a busca trocada, sem o que Barbosa e Figueredo acharam. Escrito em
+fevereiro de 2019 exatamente para esta busca: *hotéis baratos em salvador* → `[turismo] [local]`.
+
+```mermaid
+flowchart LR
+  R["[turismo] barat [local>cidade]"] --> C["combinações de 2, 3, 4<br/>posições, mantendo a ordem"]
+  C --> B{"tem entidade?"}
+  B -- não --> X["descartado"]
+  B -- sim --> E["expande por tipo,<br/>junta repetições"]
+  E --> D{"já é Barbosa<br/>ou Figueredo?"}
+  D -- sim --> X
+  D -- não --> P["[turismo] [local]<br/>[turismo] [cidade]"]
+```
+
+Depois o [`aggregate`](spec/ALGORITHMS.md#6-aggregation-aggregate) agrupa os padrões de todas as buscas: número de
+buscas, volume total, concorrência e CPC médios, a busca líder e as faixas de 1 a 20.
+
 ## A história
 
 Em 2018 o autor tinha milhões de buscas do Google com volume, CPC e concorrência e precisava saber que sites
