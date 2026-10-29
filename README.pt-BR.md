@@ -337,6 +337,7 @@ os bugs corrigidos por padrão e mantidos quando pedido.
 
 ## Relacionados
 
+- Artigo: [Sete jeitos de transformar milhões de buscas do Google em modelos de página](https://github.com/CaiqueDourado/articles/blob/main/seven-ways-search-patterns/README.pt-BR.md): como cada algoritmo funciona, com exemplos reais ([em inglês no Medium](https://medium.com/@caiquedourado/seven-ways-to-turn-millions-of-google-searches-into-page-templates-3671235eac0f)).
 - [portuguese-entity-gazetteer](https://github.com/CaiqueDourado/portuguese-entity-gazetteer): 307 mil entidades do português com seus tipos, prontas para carregar como gazetteer ([Kaggle](https://www.kaggle.com/datasets/caiquedourado/portuguese-entity-gazetteer)).
 - [google-keywords-dataset](https://github.com/CaiqueDourado/google-keywords-dataset): 38 milhões de buscas e os 1,73 milhão de padrões que estes algoritmos produziram ([Kaggle](https://www.kaggle.com/datasets/caiquedourado/google-keywords-dataset)).
 - [DedupKit](https://github.com/CaiqueDourado/DedupKit): a mesma família de chaves (acentos, radicais, chave fonética) aplicada a nomes de produto.

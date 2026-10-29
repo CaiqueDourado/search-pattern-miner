@@ -334,6 +334,7 @@ the bugs fixed by default and kept on request.
 
 ## Related
 
+- Article: [Seven ways to turn millions of Google searches into page templates](https://medium.com/@caiquedourado/seven-ways-to-turn-millions-of-google-searches-into-page-templates-3671235eac0f) (Medium): how each algorithm works, with real examples.
 - [portuguese-entity-gazetteer](https://github.com/CaiqueDourado/portuguese-entity-gazetteer): 307 thousand Portuguese entities with their types, ready to load as a gazetteer ([Kaggle](https://www.kaggle.com/datasets/caiquedourado/portuguese-entity-gazetteer)).
 - [google-keywords-dataset](https://github.com/CaiqueDourado/google-keywords-dataset): 38 million searches and the 1.73 million patterns these algorithms produced ([Kaggle](https://www.kaggle.com/datasets/caiquedourado/google-keywords-dataset)).
 - [DedupKit](https://github.com/CaiqueDourado/DedupKit): the same family of keys (folding, stems, phonetic keys) applied to product names.
