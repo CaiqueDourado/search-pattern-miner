@@ -79,6 +79,48 @@ search-pattern-miner show "detran pe" --gazetteer data/gazetteer-pt.tsv
 search-pattern-miner mine examples/keywords.csv --gazetteer data/gazetteer-pt.tsv --out patterns.csv --pairs pairs.csv
 ```
 
+**Uma busca, os sete.** O `show` imprime o que cada algoritmo faz com uma busca, depois da cadeia de exclusão:
+
+```bash
+search-pattern-miner show "hotéis baratos em salvador" --gazetteer data/gazetteer-pt.tsv
+```
+
+```json
+{
+  "prefix (viana)": [
+    "hot barat",
+    "hot barat salvador"
+  ],
+  "contiguous (vilela)": [
+    "barat salvador"
+  ],
+  "skipgram (oliveira)": [
+    "hot salvador"
+  ],
+  "bag (dourado)": [
+    "barat hot",
+    "barat hot salvador"
+  ],
+  "entity_prefix (barbosa)": [
+    "[turismo] barat",
+    "[turismo] barat [local]",
+    "[turismo] barat [cidade]"
+  ],
+  "entity_contiguous (figueredo)": [
+    "barat [local]",
+    "barat [cidade]"
+  ],
+  "entity_skipgram (rosa)": [
+    "[turismo] [local]",
+    "[turismo] [cidade]"
+  ]
+}
+```
+
+*hotéis* vira `hot` e *baratos* vira `barat` (radicais), *em* é stopword. Os quatro algoritmos de palavras veem
+`salvador` como palavra; os três de entidades a veem como lugar e cidade (`Local > Cidade` no gazetteer), e *hotéis*
+como `[turismo]`, então fazem um padrão por tipo. Cada lista deixa de fora o que os algoritmos acima já deram.
+
 O `mine` lê um CSV com a coluna `keyword` e, se houver, `volume`, `competition` e `cpc` (os nomes mudam por opção, e
 `--group market` ordena os padrões dentro de cada mercado). Ele grava uma linha por padrão com o número de buscas,
 o volume total, as médias de concorrência e CPC, a busca de maior volume, três exemplos e quatro **faixas de 1 a 20**
