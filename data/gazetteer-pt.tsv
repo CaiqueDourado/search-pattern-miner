@@ -1,0 +1,538 @@
+# surface<TAB>types (" > " separates alternative types; one pattern is made per type)
+# places: municipios-e-estados-do-brasil (IBGE, CC BY 4.0); other types written by hand
+são paulo	Local > Cidade > Estado
+rio de janeiro	Local > Cidade > Estado
+brasília	Local > Cidade
+fortaleza	Local > Cidade
+salvador	Local > Cidade
+belo horizonte	Local > Cidade
+manaus	Local > Cidade
+curitiba	Local > Cidade
+recife	Local > Cidade
+goiânia	Local > Cidade
+porto alegre	Local > Cidade
+belém	Local > Cidade
+guarulhos	Local > Cidade
+campinas	Local > Cidade
+são luís	Local > Cidade
+maceió	Local > Cidade
+campo grande	Local > Cidade
+são gonçalo	Local > Cidade
+teresina	Local > Cidade
+joão pessoa	Local > Cidade
+são bernardo do campo	Local > Cidade
+duque de caxias	Local > Cidade
+nova iguaçu	Local > Cidade
+natal	Local > Cidade
+santo andré	Local > Cidade
+osasco	Local > Cidade
+sorocaba	Local > Cidade
+uberlândia	Local > Cidade
+ribeirão preto	Local > Cidade
+são josé dos campos	Local > Cidade
+cuiabá	Local > Cidade
+jaboatão dos guararapes	Local > Cidade
+contagem	Local > Cidade
+joinville	Local > Cidade
+feira de santana	Local > Cidade
+aracaju	Local > Cidade
+londrina	Local > Cidade
+juiz de fora	Local > Cidade
+florianópolis	Local > Cidade
+aparecida de goiânia	Local > Cidade
+serra	Local > Cidade
+campos dos goytacazes	Local > Cidade
+belford roxo	Local > Cidade
+niterói	Local > Cidade
+são josé do rio preto	Local > Cidade
+ananindeua	Local > Cidade
+vila velha	Local > Cidade
+caxias do sul	Local > Cidade
+porto velho	Local > Cidade
+mogi das cruzes	Local > Cidade
+jundiaí	Local > Cidade
+macapá	Local > Cidade
+são joão de meriti	Local > Cidade
+piracicaba	Local > Cidade
+campina grande	Local > Cidade
+santos	Local > Cidade
+mauá	Local > Cidade
+montes claros	Local > Cidade
+boa vista	Local > Cidade
+betim	Local > Cidade
+maringá	Local > Cidade
+anápolis	Local > Cidade
+diadema	Local > Cidade
+carapicuíba	Local > Cidade
+petrolina	Local > Cidade
+bauru	Local > Cidade
+caruaru	Local > Cidade
+vitória da conquista	Local > Cidade
+itaquaquecetuba	Local > Cidade
+rio branco	Local > Cidade
+blumenau	Local > Cidade
+ponta grossa	Local > Cidade
+caucaia	Local > Cidade
+cariacica	Local > Cidade
+franca	Local > Cidade
+olinda	Local > Cidade
+praia grande	Local > Cidade
+cascavel	Local > Cidade
+canoas	Local > Cidade
+paulista	Local > Cidade
+uberaba	Local > Cidade
+santarém	Local > Cidade
+são vicente	Local > Cidade
+ribeirão das neves	Local > Cidade
+são josé dos pinhais	Local > Cidade
+pelotas	Local > Cidade
+vitória	Local > Cidade
+barueri	Local > Cidade
+taubaté	Local > Cidade
+suzano	Local > Cidade
+palmas	Local > Cidade
+camaçari	Local > Cidade
+várzea grande	Local > Cidade
+limeira	Local > Cidade
+guarujá	Local > Cidade
+juazeiro do norte	Local > Cidade
+foz do iguaçu	Local > Cidade
+sumaré	Local > Cidade
+petrópolis	Local > Cidade
+cotia	Local > Cidade
+taboão da serra	Local > Cidade
+imperatriz	Local > Cidade
+santa maria	Local > Cidade
+são josé	Local > Cidade
+parauapebas	Local > Cidade
+marabá	Local > Cidade
+gravataí	Local > Cidade
+mossoró	Local > Cidade
+itajaí	Local > Cidade
+volta redonda	Local > Cidade
+governador valadares	Local > Cidade
+indaiatuba	Local > Cidade
+são carlos	Local > Cidade
+chapecó	Local > Cidade
+parnamirim	Local > Cidade
+embu das artes	Local > Cidade
+macaé	Local > Cidade
+rondonópolis	Local > Cidade
+são josé de ribamar	Local > Cidade
+dourados	Local > Cidade
+araraquara	Local > Cidade
+jacareí	Local > Cidade
+juazeiro	Local > Cidade
+marília	Local > Cidade
+americana	Local > Cidade
+hortolândia	Local > Cidade
+arapiraca	Local > Cidade
+maracanaú	Local > Cidade
+itapevi	Local > Cidade
+colombo	Local > Cidade
+divinópolis	Local > Cidade
+magé	Local > Cidade
+ipatinga	Local > Cidade
+novo hamburgo	Local > Cidade
+sete lagoas	Local > Cidade
+rio verde	Local > Cidade
+águas lindas de goiás	Local > Cidade
+presidente prudente	Local > Cidade
+itaboraí	Local > Cidade
+viamão	Local > Cidade
+palhoça	Local > Cidade
+cabo frio	Local > Cidade
+santa luzia	Local > Cidade
+são leopoldo	Local > Cidade
+criciúma	Local > Cidade
+luziânia	Local > Cidade
+passo fundo	Local > Cidade
+cabo de santo agostinho	Local > Cidade
+lauro de freitas	Local > Cidade
+sobral	Local > Cidade
+rio claro	Local > Cidade
+araçatuba	Local > Cidade
+valparaíso de goiás	Local > Cidade
+maricá	Local > Cidade
+sinop	Local > Cidade
+nossa senhora do socorro	Local > Cidade
+castanhal	Local > Cidade
+rio grande	Local > Cidade
+nova friburgo	Local > Cidade
+alvorada	Local > Cidade
+itabuna	Local > Cidade
+cachoeiro de itapemirim	Local > Cidade
+santa bárbara d'oeste	Local > Cidade
+jaraguá do sul	Local > Cidade
+guarapuava	Local > Cidade
+ferraz de vasconcelos	Local > Cidade
+ilhéus	Local > Cidade
+bragança paulista	Local > Cidade
+timon	Local > Cidade
+araguaína	Local > Cidade
+ibirité	Local > Cidade
+barra mansa	Local > Cidade
+porto seguro	Local > Cidade
+itu	Local > Cidade
+angra dos reis	Local > Cidade
+mesquita	Local > Cidade
+linhares	Local > Cidade
+são caetano do sul	Local > Cidade
+pindamonhangaba	Local > Cidade
+francisco morato	Local > Cidade
+teresópolis	Local > Cidade
+lages	Local > Cidade
+poços de caldas	Local > Cidade
+parnaíba	Local > Cidade
+barreiras	Local > Cidade
+patos de minas	Local > Cidade
+jequié	Local > Cidade
+atibaia	Local > Cidade
+itapecerica da serra	Local > Cidade
+abaetetuba	Local > Cidade
+itapetininga	Local > Cidade
+caxias	Local > Cidade
+rio das ostras	Local > Cidade
+senador canedo	Local > Cidade
+santana de parnaíba	Local > Cidade
+mogi-guacú	Local > Cidade
+pouso alegre	Local > Cidade
+araucária	Local > Cidade
+alagoinhas	Local > Cidade
+toledo	Local > Cidade
+santa rita	Local > Cidade
+fazenda rio grande	Local > Cidade
+camaragibe	Local > Cidade
+nilópolis	Local > Cidade
+paranaguá	Local > Cidade
+paço do lumiar	Local > Cidade
+teixeira de freitas	Local > Cidade
+botucatu	Local > Cidade
+franco da rocha	Local > Cidade
+garanhuns	Local > Cidade
+trindade	Local > Cidade
+brusque	Local > Cidade
+queimados	Local > Cidade
+balneário camboriú	Local > Cidade
+teófilo otoni	Local > Cidade
+varginha	Local > Cidade
+campo largo	Local > Cidade
+cachoeirinha	Local > Cidade
+caraguatatuba	Local > Cidade
+salto	Local > Cidade
+cametá	Local > Cidade
+vitória de santo antão	Local > Cidade
+jaú	Local > Cidade
+santa cruz do sul	Local > Cidade
+três lagoas	Local > Cidade
+sapucaia do sul	Local > Cidade
+conselheiro lafaiete	Local > Cidade
+itapipoca	Local > Cidade
+crato	Local > Cidade
+araras	Local > Cidade
+apucarana	Local > Cidade
+araruama	Local > Cidade
+resende	Local > Cidade
+sabará	Local > Cidade
+vespasiano	Local > Cidade
+votorantim	Local > Cidade
+pinhais	Local > Cidade
+sertãozinho	Local > Cidade
+barcarena	Local > Cidade
+valinhos	Local > Cidade
+altamira	Local > Cidade
+barbacena	Local > Cidade
+guarapari	Local > Cidade
+ji-paraná	Local > Cidade
+tatuí	Local > Cidade
+são mateus	Local > Cidade
+itaituba	Local > Cidade
+bento gonçalves	Local > Cidade
+bragança	Local > Cidade
+barretos	Local > Cidade
+itatiba	Local > Cidade
+colatina	Local > Cidade
+almirante tamandaré	Local > Cidade
+arapongas	Local > Cidade
+birigüi	Local > Cidade
+piraquara	Local > Cidade
+sarandi	Local > Cidade
+jandira	Local > Cidade
+guaratinguetá	Local > Cidade
+bagé	Local > Cidade
+araguari	Local > Cidade
+uruguaiana	Local > Cidade
+umuarama	Local > Cidade
+itaguaí	Local > Cidade
+formosa	Local > Cidade
+são gonçalo do amarante	Local > Cidade
+catanduva	Local > Cidade
+várzea paulista	Local > Cidade
+ribeirão pires	Local > Cidade
+igarassu	Local > Cidade
+simões filho	Local > Cidade
+catalão	Local > Cidade
+codó	Local > Cidade
+eunápolis	Local > Cidade
+itabira	Local > Cidade
+paulo afonso	Local > Cidade
+cubatão	Local > Cidade
+itanhaém	Local > Cidade
+passos	Local > Cidade
+marituba	Local > Cidade
+nova lima	Local > Cidade
+araxá	Local > Cidade
+são lourenço da mata	Local > Cidade
+sorriso	Local > Cidade
+paulínia	Local > Cidade
+tubarão	Local > Cidade
+itumbiara	Local > Cidade
+luís eduardo magalhães	Local > Cidade
+santana	Local > Cidade
+cambé	Local > Cidade
+breves	Local > Cidade
+açailândia	Local > Cidade
+tangará da serra	Local > Cidade
+jataí	Local > Cidade
+erechim	Local > Cidade
+nova serrana	Local > Cidade
+paragominas	Local > Cidade
+maranguape	Local > Cidade
+planaltina	Local > Cidade
+lavras	Local > Cidade
+coronel fabriciano	Local > Cidade
+muriaé	Local > Cidade
+são pedro da aldeia	Local > Cidade
+ourinhos	Local > Cidade
+novo gama	Local > Cidade
+poá	Local > Cidade
+bacabal	Local > Cidade
+itacoatiara	Local > Cidade
+itabaiana	Local > Cidade
+ubá	Local > Cidade
+patos	Local > Cidade
+camboriú	Local > Cidade
+santo antônio de jesus	Local > Cidade
+ituiutaba	Local > Cidade
+manacapuru	Local > Cidade
+balsas	Local > Cidade
+lagarto	Local > Cidade
+assis	Local > Cidade
+itaperuna	Local > Cidade
+rondônia	Local > Estado
+ro	Local > Estado
+acre	Local > Estado
+ac	Local > Estado
+amazonas	Local > Estado
+am	Local > Estado
+roraima	Local > Estado
+rr	Local > Estado
+pará	Local > Estado
+pa	Local > Estado
+amapá	Local > Estado
+ap	Local > Estado
+tocantins	Local > Estado
+to	Local > Estado
+maranhão	Local > Estado
+ma	Local > Estado
+piauí	Local > Estado
+pi	Local > Estado
+ceará	Local > Estado
+ce	Local > Estado
+rio grande do norte	Local > Estado
+rn	Local > Estado
+paraíba	Local > Estado
+pb	Local > Estado
+pernambuco	Local > Estado
+pe	Local > Estado
+alagoas	Local > Estado
+al	Local > Estado
+sergipe	Local > Estado
+bahia	Local > Estado
+ba	Local > Estado
+minas gerais	Local > Estado
+mg	Local > Estado
+espírito santo	Local > Estado
+es	Local > Estado
+rj	Local > Estado
+sp	Local > Estado
+paraná	Local > Estado
+pr	Local > Estado
+santa catarina	Local > Estado
+sc	Local > Estado
+rio grande do sul	Local > Estado
+rs	Local > Estado
+mato grosso do sul	Local > Estado
+ms	Local > Estado
+mato grosso	Local > Estado
+mt	Local > Estado
+goiás	Local > Estado
+go	Local > Estado
+distrito federal	Local > Estado
+df	Local > Estado
+bolo de cenoura	Comida
+bolo de chocolate	Comida
+bolo de fubá	Comida
+bolo de milho	Comida
+bolo de laranja	Comida
+pão de queijo	Comida
+pão caseiro	Comida
+panqueca	Comida
+pudim	Comida
+brigadeiro	Comida
+lasanha	Comida
+strogonoff	Comida
+feijoada	Comida
+moqueca	Comida
+tapioca	Comida
+cuscuz	Comida
+coxinha	Comida
+esfiha	Comida
+pizza	Comida
+hambúrguer	Comida
+arroz doce	Comida
+canjica	Comida
+mousse de maracujá	Comida
+torta de limão	Comida
+frango assado	Comida
+carne de panela	Comida
+escondidinho	Comida
+farofa	Comida
+macarrão	Comida
+nhoque	Comida
+risoto	Comida
+omelete	Comida
+vinagrete	Comida
+salpicão	Comida
+maionese	Comida
+brownie	Comida
+cookie	Comida
+sorvete	Comida
+açaí	Comida
+quindim	Comida
+beijinho	Comida
+pé de moleque	Comida
+paçoca	Comida
+bolinho de chuva	Comida
+pastel	Comida
+empada	Comida
+quiche	Comida
+sopa de legumes	Comida
+caldo verde	Comida
+baião de dois	Comida
+mega sena	Loterias
+mega-sena	Loterias
+quina	Loterias
+lotofácil	Loterias
+lotomania	Loterias
+timemania	Loterias
+dupla sena	Loterias
+dia de sorte	Loterias
+super sete	Loterias
+loteria federal	Loterias
+apartamento	Imóvel
+apartamentos	Imóvel
+casa	Imóvel
+casas	Imóvel
+kitnet	Imóvel
+kitnets	Imóvel
+terreno	Imóvel
+terrenos	Imóvel
+sobrado	Imóvel
+sobrados	Imóvel
+chácara	Imóvel
+chácaras	Imóvel
+sítio	Imóvel
+sítios	Imóvel
+galpão	Imóvel
+galpões	Imóvel
+sala comercial	Imóvel
+salas comerciais	Imóvel
+cobertura	Imóvel
+coberturas	Imóvel
+flat	Imóvel
+flats	Imóvel
+hotel	Turismo
+hotéis	Turismo
+hoteis	Turismo
+pousada	Turismo
+pousadas	Turismo
+resort	Turismo
+resorts	Turismo
+hostel	Turismo
+hostels	Turismo
+camping	Turismo
+passagem aérea	Turismo
+passagens aéreas	Turismo
+cpf	Documento
+cnpj	Documento
+rg	Documento
+cnh	Documento
+título de eleitor	Documento
+certidão de nascimento	Documento
+certidão de casamento	Documento
+passaporte	Documento
+carteira de trabalho	Documento
+boleto	Documento
+nota fiscal	Documento
+ipva	Documento
+iptu	Documento
+fgts	Documento
+pis	Documento
+facebook	Site
+instagram	Site
+youtube	Site
+gmail	Site
+hotmail	Site
+outlook	Site
+whatsapp	Site
+netflix	Site
+google	Site
+twitter	Site
+tiktok	Site
+linkedin	Site
+wikipedia	Site
+detran	Órgão
+inss	Órgão
+receita federal	Órgão
+polícia federal	Órgão
+procon	Órgão
+caixa econômica	Órgão
+banco do brasil	Órgão
+correios	Órgão
+enem	Órgão
+sisu	Órgão
+médico	Profissão
+médica	Profissão
+enfermeiro	Profissão
+enfermeira	Profissão
+advogado	Profissão
+advogada	Profissão
+engenheiro	Profissão
+engenheira	Profissão
+professor	Profissão
+professora	Profissão
+dentista	Profissão
+psicólogo	Profissão
+psicóloga	Profissão
+nutricionista	Profissão
+eletricista	Profissão
+encanador	Profissão
+pedreiro	Profissão
+motorista	Profissão
+veterinário	Profissão
+contador	Profissão
+cachorro	Animal
+gato	Animal
+cavalo	Animal
+vaca	Animal
+galinha	Animal
+peixe	Animal
+pássaro	Animal
+papagaio	Animal
+coelho	Animal
+tartaruga	Animal
+cobra	Animal
+rato	Animal
+aranha	Animal
+abelha	Animal

@@ -1,0 +1,20 @@
+<Project>
+  <PropertyGroup>
+    <TargetFramework>net8.0</TargetFramework>
+    <LangVersion>latest</LangVersion>
+    <Nullable>enable</Nullable>
+    <ImplicitUsings>enable</ImplicitUsings>
+    <TreatWarningsAsErrors>true</TreatWarningsAsErrors>
+    <Deterministic>true</Deterministic>
+
+    <Version>0.1.0</Version>
+    <Authors>Caique Dourado</Authors>
+    <Copyright>Copyright (c) 2026 Caique Dourado</Copyright>
+    <PackageLicenseExpression>MIT</PackageLicenseExpression>
+    <PackageProjectUrl>https://github.com/CaiqueDourado/search-pattern-miner</PackageProjectUrl>
+    <RepositoryUrl>https://github.com/CaiqueDourado/search-pattern-miner</RepositoryUrl>
+    <RepositoryType>git</RepositoryType>
+    <PackageReadmeFile>README.md</PackageReadmeFile>
+    <PackageTags>seo;keyword-research;search-queries;query-templates;n-grams;portuguese;pt-br;stemmer;entity-recognition;programmatic-seo</PackageTags>
+  </PropertyGroup>
+</Project>

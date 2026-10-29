@@ -1,0 +1,92 @@
+{
+  "pattern": "com faz [comida]",
+  "algorithm": "entity_prefix",
+  "alias": "barbosa",
+  "num_words": 3,
+  "totals": {
+    "num_searches": 10,
+    "volume_total": 119370,
+    "competition_avg": 0.543,
+    "cpc_avg": 1.74
+  },
+  "bands": {
+    "volume": 1,
+    "searches": 1,
+    "competition": 17,
+    "cpc": 12
+  },
+  "top_search": "como fazer brigadeiro",
+  "searches": [
+    {
+      "keyword": "como fazer brigadeiro",
+      "replaced": "como fazer [comida]",
+      "volume": 49500,
+      "competition": 0.99,
+      "cpc": 3.27
+    },
+    {
+      "keyword": "como fazer panqueca",
+      "replaced": "como fazer [comida]",
+      "volume": 49500,
+      "competition": 0.75,
+      "cpc": 2.12
+    },
+    {
+      "keyword": "como fazer coxinha",
+      "replaced": "como fazer [comida]",
+      "volume": 8100,
+      "competition": 0.56,
+      "cpc": 0.43
+    },
+    {
+      "keyword": "como fazer pão de queijo",
+      "replaced": "como fazer [comida]",
+      "volume": 4400,
+      "competition": 0.46,
+      "cpc": 2.97
+    },
+    {
+      "keyword": "como fazer feijoada",
+      "replaced": "como fazer [comida]",
+      "volume": 2400,
+      "competition": 0.27,
+      "cpc": 0.75
+    },
+    {
+      "keyword": "como fazer tapioca",
+      "replaced": "como fazer [comida]",
+      "volume": 2400,
+      "competition": 0.66,
+      "cpc": 1.33
+    },
+    {
+      "keyword": "como fazer lasanha",
+      "replaced": "como fazer [comida]",
+      "volume": 1300,
+      "competition": 0.41,
+      "cpc": 0.88
+    },
+    {
+      "keyword": "como fazer bolo de cenoura",
+      "replaced": "como fazer [comida]",
+      "volume": 590,
+      "competition": 0.79,
+      "cpc": 3.29
+    },
+    {
+      "keyword": "como fazer mousse de maracujá",
+      "replaced": "como fazer [comida]",
+      "volume": 590,
+      "competition": 0.29,
+      "cpc": 1.45
+    },
+    {
+      "keyword": "como fazer pudim",
+      "replaced": "como fazer [comida]",
+      "volume": 590,
+      "competition": 0.25,
+      "cpc": 0.91
+    }
+  ],
+  "note": "synthetic searches and metrics (examples/keywords.csv)"
+}

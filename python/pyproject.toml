@@ -1,0 +1,39 @@
+[build-system]
+requires = ["hatchling>=1.25"]
+build-backend = "hatchling.build"
+
+[project]
+name = "search-pattern-miner"
+version = "0.1.0"
+description = "Turn search queries into reusable patterns (\"como fazer [comida]\"): prefixes, n-grams, skip-grams, bags of words and entity replacement for Brazilian Portuguese, with a Lucene-compatible stemmer. Same results as the .NET version."
+readme = "README.md"
+requires-python = ">=3.10"
+license = "MIT"
+license-files = ["LICENSE"]
+authors = [{ name = "Caique Dourado" }]
+keywords = ["seo", "keyword-research", "search-queries", "query-templates", "n-grams", "portuguese", "pt-br", "stemmer", "entity-recognition", "programmatic-seo"]
+classifiers = [
+    "Development Status :: 4 - Beta",
+    "Intended Audience :: Developers",
+    "Intended Audience :: Science/Research",
+    "Natural Language :: Portuguese (Brazilian)",
+    "Programming Language :: Python :: 3",
+    "Topic :: Text Processing :: Linguistic",
+]
+dependencies = []
+
+[project.optional-dependencies]
+test = ["pytest>=7"]
+
+[project.scripts]
+search-pattern-miner = "search_pattern_miner.cli:main"
+
+[project.urls]
+Homepage = "https://github.com/CaiqueDourado/search-pattern-miner"
+Issues = "https://github.com/CaiqueDourado/search-pattern-miner/issues"
+
+[tool.hatch.build.targets.wheel]
+packages = ["src/search_pattern_miner"]
+
+[tool.pytest.ini_options]
+testpaths = ["tests"]

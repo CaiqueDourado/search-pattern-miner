@@ -1,0 +1,13 @@
+<Project Sdk="Microsoft.NET.Sdk">
+
+  <PropertyGroup>
+    <PackageId>SearchPatternMiner</PackageId>
+    <Description>Turn search queries into reusable patterns ("como fazer [comida]"): prefixes, n-grams, skip-grams, bags of words and entity replacement for Brazilian Portuguese, with a Lucene-compatible stemmer, plus aggregation and NTILE(20) bands. Zero dependencies; results match the Python package search-pattern-miner.</Description>
+    <GenerateDocumentationFile>true</GenerateDocumentationFile>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <None Include="..\..\..\README.md" Pack="true" PackagePath="\" Visible="false" />
+  </ItemGroup>
+
+</Project>

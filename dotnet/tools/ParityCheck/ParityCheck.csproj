@@ -1,0 +1,14 @@
+<Project Sdk="Microsoft.NET.Sdk">
+
+  <!-- Dependency-free golden check (no NuGet packages needed): dotnet run, project tools/ParityCheck -->
+  <PropertyGroup>
+    <OutputType>Exe</OutputType>
+    <IsPackable>false</IsPackable>
+    <GenerateDocumentationFile>false</GenerateDocumentationFile>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <ProjectReference Include="..\..\src\SearchPatternMiner\SearchPatternMiner.csproj" />
+  </ItemGroup>
+
+</Project>
