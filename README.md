@@ -100,7 +100,8 @@ entity is both a place and a city, and **one pattern is made per type** (the ori
 ships a small example, [data/gazetteer-pt.tsv](data/gazetteer-pt.tsv): the 27 states and their codes, the 300+
 municipalities with 100,000 people or more (from the author's [municipios-e-estados-do-brasil](https://github.com/CaiqueDourado/municipios-e-estados-do-brasil)),
 and short hand-made lists of foods, lotteries, property types, tourism, documents, sites, public bodies, professions
-and animals. Bring your own for real work: Wikidata and DBpedia are good sources (mind their licenses).
+and animals. For real work use [portuguese-entity-gazetteer](https://github.com/CaiqueDourado/portuguese-entity-gazetteer): 307 thousand entities with their types, in this
+format (`gazetteer-pt.tsv` on [Kaggle](https://www.kaggle.com/datasets/caiquedourado/portuguese-entity-gazetteer)), the cleaned dictionary the original algorithms used.
 
 ## Two modes
 
@@ -122,9 +123,9 @@ it was checked on ([evaluation/reproduce.py](evaluation/reproduce.py), [results]
 | `padroes_algoritmos`, Viana | 400 | 400 |
 | `padroes_algoritmos`, Vilela (built before the exclusion chain) | 400 | 400 |
 
-With the original 2019 entity dictionary, which is not published because it holds ad titles and brands that asked
-to be removed, Barbosa and Rosa also reproduce 400 of 400 published rows and Figueredo 351 (the rest use type
-spellings of an older dictionary snapshot).
+With the original 2019 entity dictionary (a 2022 snapshot, not published as is; its cleaned version is
+[portuguese-entity-gazetteer](https://github.com/CaiqueDourado/portuguese-entity-gazetteer)), Barbosa and Rosa also reproduce 400 of 400 published rows and Figueredo 351
+(the rest use type spellings of an older dictionary snapshot).
 
 ## How it works
 
@@ -174,6 +175,7 @@ the bugs fixed by default and kept on request.
 
 ## Related
 
+- [portuguese-entity-gazetteer](https://github.com/CaiqueDourado/portuguese-entity-gazetteer): 307 thousand Portuguese entities with their types, ready to load as a gazetteer ([Kaggle](https://www.kaggle.com/datasets/caiquedourado/portuguese-entity-gazetteer)).
 - [google-keywords-dataset](https://github.com/CaiqueDourado/google-keywords-dataset): 38 million searches and the 1.73 million patterns these algorithms produced ([Kaggle](https://www.kaggle.com/datasets/caiquedourado/google-keywords-dataset)).
 - [DedupKit](https://github.com/CaiqueDourado/DedupKit): the same family of keys (folding, stems, phonetic keys) applied to product names.
 - [dicionario-portugues](https://github.com/CaiqueDourado/dicionario-portugues): 272 thousand Portuguese words with stems and phonetic keys.

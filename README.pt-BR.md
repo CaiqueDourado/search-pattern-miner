@@ -101,7 +101,8 @@ nunca escolhia um). A biblioteca traz um exemplo pequeno, [data/gazetteer-pt.tsv
 estados e suas siglas, os 300+ municípios com 100 mil habitantes ou mais (da base do autor
 [municipios-e-estados-do-brasil](https://github.com/CaiqueDourado/municipios-e-estados-do-brasil)) e listas curtas,
 feitas à mão, de comidas, loterias, tipos de imóvel, turismo, documentos, sites, órgãos, profissões e animais. Para
-uso real, traga o seu: Wikidata e DBpedia são boas fontes (atenção às licenças).
+uso real, use o [portuguese-entity-gazetteer](https://github.com/CaiqueDourado/portuguese-entity-gazetteer): 307 mil entidades com seus tipos, neste formato
+(`gazetteer-pt.tsv` no [Kaggle](https://www.kaggle.com/datasets/caiquedourado/portuguese-entity-gazetteer)), o dicionário que os algoritmos originais usavam, limpo.
 
 ## Dois modos
 
@@ -123,9 +124,9 @@ conferidos ([evaluation/reproduce.py](evaluation/reproduce.py), [resultados](eva
 | `padroes_algoritmos`, Viana | 400 | 400 |
 | `padroes_algoritmos`, Vilela (feita antes da cadeia de exclusão) | 400 | 400 |
 
-Com o dicionário de entidades original de 2019, que não é publicado porque tem títulos de anúncio e marcas que
-pediram remoção, Barbosa e Rosa também reproduzem 400 de 400 linhas publicadas, e Figueredo 351 (as demais usam a
-grafia de tipos de uma versão mais antiga do dicionário).
+Com o dicionário de entidades original de 2019 (um retrato de 2022, não publicado como estava; a versão limpa é o
+[portuguese-entity-gazetteer](https://github.com/CaiqueDourado/portuguese-entity-gazetteer)), Barbosa e Rosa também reproduzem 400 de 400 linhas publicadas, e Figueredo 351
+(as demais usam a grafia de tipos de uma versão mais antiga do dicionário).
 
 ## Como funciona
 
@@ -177,6 +178,7 @@ os bugs corrigidos por padrão e mantidos quando pedido.
 
 ## Relacionados
 
+- [portuguese-entity-gazetteer](https://github.com/CaiqueDourado/portuguese-entity-gazetteer): 307 mil entidades do português com seus tipos, prontas para carregar como gazetteer ([Kaggle](https://www.kaggle.com/datasets/caiquedourado/portuguese-entity-gazetteer)).
 - [google-keywords-dataset](https://github.com/CaiqueDourado/google-keywords-dataset): 38 milhões de buscas e os 1,73 milhão de padrões que estes algoritmos produziram ([Kaggle](https://www.kaggle.com/datasets/caiquedourado/google-keywords-dataset)).
 - [DedupKit](https://github.com/CaiqueDourado/DedupKit): a mesma família de chaves (acentos, radicais, chave fonética) aplicada a nomes de produto.
 - [dicionario-portugues](https://github.com/CaiqueDourado/dicionario-portugues): 272 mil palavras do português com radicais e chaves fonéticas.
